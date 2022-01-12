@@ -2,6 +2,6 @@
 
 class_Nm Nm;
 
-void class_Nm::InitFunction(void){
+FUNC(void, NM_CODE) class_Nm::InitFunction(void){
 }
 
