@@ -8,6 +8,8 @@
 /*****************************************************/
 #include "Nm.h"
 
+#include "Nm_EcuM.h"
+
 /*****************************************************/
 /* #DEFINES                                          */
 /*****************************************************/
@@ -31,12 +33,14 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
+class_Nm_EcuM Nm_EcuM;
+class_EcuM_Client *EcuM_Client_ptr_Nm = &Nm_EcuM;
 class_Nm Nm;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-FUNC(void, NM_CODE) class_Nm::InitFunction(void){
+FUNC(void, NM_CODE) class_Nm_EcuM::InitFunction(void){
 }
 
 FUNC(void, NM_CODE) class_Nm::PassiveStartUp(void){

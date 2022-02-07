@@ -26,7 +26,6 @@ class class_Nm{
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-      FUNC(void, NM_CODE) InitFunction                    (void);
       FUNC(void, NM_CODE) PassiveStartUp                  (void);
       FUNC(void, NM_CODE) NetworkRequest                  (void);
       FUNC(void, NM_CODE) NetworkRelease                  (void);
