@@ -9,9 +9,12 @@
 #include "Nm.h"
 
 #include "Nm_EcuM.h"
+#include "Nm_SchM.h"
 
 /*****************************************************/
 /* #DEFINES                                          */
+/*****************************************************/
+
 /*****************************************************/
 
 /*****************************************************/
@@ -35,12 +38,17 @@
 /*****************************************************/
 class_Nm_EcuM Nm_EcuM;
 class_EcuM_Client *EcuM_Client_ptr_Nm = &Nm_EcuM;
+class_Nm_SchM Nm_SchM;
+class_SchM_Client *SchM_Client_ptr_Nm = &Nm_SchM;
 class_Nm Nm;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
 FUNC(void, NM_CODE) class_Nm_EcuM::InitFunction(void){
+}
+
+FUNC(void, NM_CODE) class_Nm_SchM::MainFunction(void){
 }
 
 FUNC(void, NM_CODE) class_Nm::PassiveStartUp(void){
@@ -125,9 +133,6 @@ FUNC(void, NM_CODE) class_Nm::CbTxTimeoutException(void){
 }
 
 FUNC(void, NM_CODE) class_Nm::CbCarWakeUpIndication(void){
-}
-
-FUNC(void, NM_CODE) class_Nm::MainFunction(void){
 }
 
 FUNC(void, NM_CODE) class_Nm::CalloutCarWakeUp(void){

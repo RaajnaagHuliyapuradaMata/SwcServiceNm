@@ -54,7 +54,6 @@ class class_Nm{
       FUNC(void, NM_CODE) CbRepeateMessageIndication      (void);
       FUNC(void, NM_CODE) CbTxTimeoutException            (void);
       FUNC(void, NM_CODE) CbCarWakeUpIndication           (void);
-      FUNC(void, NM_CODE) MainFunction                    (void);
       FUNC(void, NM_CODE) CalloutCarWakeUp                (void);
 };
 
