@@ -36,19 +36,20 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-class_Nm_EcuM Nm_EcuM;
-class_EcuM_Client *EcuM_Client_ptr_Nm = &Nm_EcuM;
-class_Nm_SchM Nm_SchM;
-class_SchM_Client *SchM_Client_ptr_Nm = &Nm_SchM;
+interface_Nm_EcuM_Init Nm_EcuM_Init;
+interface_Nm_SchM_Main Nm_SchM_Main;
 class_Nm Nm;
+
+interface_EcuM_Init_Client *EcuM_Init_Client_ptr_Nm = &Nm_EcuM_Init;
+interface_SchM_Main_Client *SchM_Main_Client_ptr_Nm = &Nm_SchM_Main;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-FUNC(void, NM_CODE) class_Nm_EcuM::InitFunction(void){
+FUNC(void, NM_CODE) interface_Nm_EcuM_Init::InitFunction(void){
 }
 
-FUNC(void, NM_CODE) class_Nm_SchM::MainFunction(void){
+FUNC(void, NM_CODE) interface_Nm_SchM_Main::MainFunction(void){
 }
 
 FUNC(void, NM_CODE) class_Nm::PassiveStartUp(void){
