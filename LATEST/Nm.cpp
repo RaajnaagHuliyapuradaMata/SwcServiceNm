@@ -6,15 +6,12 @@
 /*****************************************************/
 /* #INCLUDES                                         */
 /*****************************************************/
-#include "Nm.h"
+#include "module.h"
 
-#include "Nm_EcuM.h"
-#include "Nm_SchM.h"
+#include "Nm_Unused.h"
 
 /*****************************************************/
 /* #DEFINES                                          */
-/*****************************************************/
-
 /*****************************************************/
 
 /*****************************************************/
@@ -24,6 +21,12 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
+class module_Nm : public class_module{
+   public:
+      FUNC(void, NM_CODE) InitFunction   (void);
+      FUNC(void, NM_CODE) DeInitFunction (void);
+      FUNC(void, NM_CODE) MainFunction   (void);
+};
 
 /*****************************************************/
 /* CONSTS                                            */
@@ -36,107 +39,105 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-interface_Nm_EcuM_Init Nm_EcuM_Init;
-interface_Nm_SchM_Main Nm_SchM_Main;
-class_Nm Nm;
+module_Nm Nm;
 
-interface_EcuM_Init_Client *EcuM_Init_Client_ptr_Nm = &Nm_EcuM_Init;
-interface_SchM_Main_Client *SchM_Main_Client_ptr_Nm = &Nm_SchM_Main;
+interface_EcuM_Client *EcuM_Client_ptr_Nm = &Nm;
+interface_SchM_Client *SchM_Client_ptr_Nm = &Nm;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-FUNC(void, NM_CODE) interface_Nm_EcuM_Init::InitFunction(void){
+FUNC(void, NM_CODE) module_Nm::InitFunction(void){
 }
 
-FUNC(void, NM_CODE) interface_Nm_SchM_Main::MainFunction(void){
+FUNC(void, NM_CODE) module_Nm::MainFunction(void){
 }
 
-FUNC(void, NM_CODE) class_Nm::PassiveStartUp(void){
+FUNC(void, NM_CODE) class_Nm_Unused::PassiveStartUp(void){
 }
 
-FUNC(void, NM_CODE) class_Nm::NetworkRequest(void){
+FUNC(void, NM_CODE) class_Nm_Unused::NetworkRequest(void){
 }
 
-FUNC(void, NM_CODE) class_Nm::NetworkRelease(void){
+FUNC(void, NM_CODE) class_Nm_Unused::NetworkRelease(void){
 }
 
-FUNC(void, NM_CODE) class_Nm::DisableCommunication(void){
+FUNC(void, NM_CODE) class_Nm_Unused::DisableCommunication(void){
 }
 
-FUNC(void, NM_CODE) class_Nm::EnableCommunication(void){
+FUNC(void, NM_CODE) class_Nm_Unused::EnableCommunication(void){
 }
 
-FUNC(void, NM_CODE) class_Nm::GetPduData(void){
+FUNC(void, NM_CODE) class_Nm_Unused::GetPduData(void){
 }
 
-FUNC(void, NM_CODE) class_Nm::GetUserData(void){
+FUNC(void, NM_CODE) class_Nm_Unused::GetUserData(void){
 }
 
-FUNC(void, NM_CODE) class_Nm::SetUserData(void){
+FUNC(void, NM_CODE) class_Nm_Unused::SetUserData(void){
 }
 
-FUNC(void, NM_CODE) class_Nm::RepeateMessageRequest(void){
+FUNC(void, NM_CODE) class_Nm_Unused::RepeateMessageRequest(void){
 }
 
-FUNC(void, NM_CODE) class_Nm::GetNodeIdentifier(void){
+FUNC(void, NM_CODE) class_Nm_Unused::GetNodeIdentifier(void){
 }
 
-FUNC(void, NM_CODE) class_Nm::GetLocalNodeIdentifier(void){
+FUNC(void, NM_CODE) class_Nm_Unused::GetLocalNodeIdentifier(void){
 }
 
-FUNC(void, NM_CODE) class_Nm::CheckRemoteSleepIndication(void){
+FUNC(void, NM_CODE) class_Nm_Unused::CheckRemoteSleepIndication(void){
 }
 
-FUNC(void, NM_CODE) class_Nm::GetState(void){
+FUNC(void, NM_CODE) class_Nm_Unused::GetState(void){
 }
 
-FUNC(void, NM_CODE) class_Nm::GetVersionInfo(void){
+FUNC(void, NM_CODE) class_Nm_Unused::GetVersionInfo(void){
 }
 
-FUNC(void, NM_CODE) class_Nm::CbNetworkStartIndication(void){
+FUNC(void, NM_CODE) class_Nm_Unused::CbNetworkStartIndication(void){
 }
 
-FUNC(void, NM_CODE) class_Nm::CbNetworkMode(void){
+FUNC(void, NM_CODE) class_Nm_Unused::CbNetworkMode(void){
 }
 
-FUNC(void, NM_CODE) class_Nm::CbBusSleepMode(void){
+FUNC(void, NM_CODE) class_Nm_Unused::CbBusSleepMode(void){
 }
 
-FUNC(void, NM_CODE) class_Nm::CbPrepareBusSleepMode(void){
+FUNC(void, NM_CODE) class_Nm_Unused::CbPrepareBusSleepMode(void){
 }
 
-FUNC(void, NM_CODE) class_Nm::CbRemoteSleepIndication(void){
+FUNC(void, NM_CODE) class_Nm_Unused::CbRemoteSleepIndication(void){
 }
 
-FUNC(void, NM_CODE) class_Nm::CbRemoteSleepCancellation(void){
+FUNC(void, NM_CODE) class_Nm_Unused::CbRemoteSleepCancellation(void){
 }
 
-FUNC(void, NM_CODE) class_Nm::CbSynchronizationPoint(void){
+FUNC(void, NM_CODE) class_Nm_Unused::CbSynchronizationPoint(void){
 }
 
-FUNC(void, NM_CODE) class_Nm::CbCoordReadyToSleepIndication(void){
+FUNC(void, NM_CODE) class_Nm_Unused::CbCoordReadyToSleepIndication(void){
 }
 
-FUNC(void, NM_CODE) class_Nm::CbCoordReadyToSleepCancellation(void){
+FUNC(void, NM_CODE) class_Nm_Unused::CbCoordReadyToSleepCancellation(void){
 }
 
-FUNC(void, NM_CODE) class_Nm::CbPduRxIndication(void){
+FUNC(void, NM_CODE) class_Nm_Unused::CbPduRxIndication(void){
 }
 
-FUNC(void, NM_CODE) class_Nm::CbStateChangeNotification(void){
+FUNC(void, NM_CODE) class_Nm_Unused::CbStateChangeNotification(void){
 }
 
-FUNC(void, NM_CODE) class_Nm::CbRepeateMessageIndication(void){
+FUNC(void, NM_CODE) class_Nm_Unused::CbRepeateMessageIndication(void){
 }
 
-FUNC(void, NM_CODE) class_Nm::CbTxTimeoutException(void){
+FUNC(void, NM_CODE) class_Nm_Unused::CbTxTimeoutException(void){
 }
 
-FUNC(void, NM_CODE) class_Nm::CbCarWakeUpIndication(void){
+FUNC(void, NM_CODE) class_Nm_Unused::CbCarWakeUpIndication(void){
 }
 
-FUNC(void, NM_CODE) class_Nm::CalloutCarWakeUp(void){
+FUNC(void, NM_CODE) class_Nm_Unused::CalloutCarWakeUp(void){
 }
 
 /*****************************************************/
