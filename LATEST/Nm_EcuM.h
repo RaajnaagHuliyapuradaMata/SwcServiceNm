@@ -22,7 +22,7 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
-class class_Nm_EcuM : public class_EcuM_Client{
+class interface_Nm_EcuM : public interface_EcuM_Client{
    public:
 /*****************************************************/
 /* FUNCTIONS                                         */
@@ -41,7 +41,7 @@ class class_Nm_EcuM : public class_EcuM_Client{
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern class_EcuM_Client *EcuM_Client_ptr_Nm;
+extern interface_Nm_EcuM *EcuM_Client_ptr_Nm;
 
 /*****************************************************/
 /* EOF                                               */

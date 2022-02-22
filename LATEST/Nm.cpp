@@ -7,7 +7,8 @@
 /* #INCLUDES                                         */
 /*****************************************************/
 #include "module.h"
-
+#include "Nm_EcuM.h"
+#include "Nm_SchM.h"
 #include "Nm_Unused.h"
 
 /*****************************************************/
@@ -21,7 +22,11 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
-class module_Nm : public class_module{
+class module_Nm:
+      public abstract_module
+   ,  public interface_Nm_EcuM
+   ,  public interface_Nm_SchM
+{
    public:
       FUNC(void, NM_CODE) InitFunction   (void);
       FUNC(void, NM_CODE) DeInitFunction (void);
@@ -41,13 +46,16 @@ class module_Nm : public class_module{
 /*****************************************************/
 module_Nm Nm;
 
-interface_EcuM_Client *EcuM_Client_ptr_Nm = &Nm;
-interface_SchM_Client *SchM_Client_ptr_Nm = &Nm;
+interface_Nm_EcuM *EcuM_Client_ptr_Nm = &Nm;
+interface_Nm_SchM *SchM_Client_ptr_Nm = &Nm;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
 FUNC(void, NM_CODE) module_Nm::InitFunction(void){
+}
+
+FUNC(void, NM_CODE) module_Nm::DeInitFunction(void){
 }
 
 FUNC(void, NM_CODE) module_Nm::MainFunction(void){
