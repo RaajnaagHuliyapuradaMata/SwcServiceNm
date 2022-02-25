@@ -27,7 +27,8 @@ class interface_Nm_EcuM : public interface_EcuM_Client{
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-      FUNC(void, NM_CODE) InitFunction(void);
+      virtual FUNC(void, NM_CODE) InitFunction   (void) = 0;
+      virtual FUNC(void, NM_CODE) DeInitFunction (void) = 0;
 };
 
 /*****************************************************/
