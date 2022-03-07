@@ -24,8 +24,6 @@
 /*****************************************************/
 class module_Nm:
       public abstract_module
-   ,  public interface_Nm_EcuM
-   ,  public interface_Nm_SchM
 {
    public:
       FUNC(void, NM_CODE) InitFunction   (void);
@@ -44,10 +42,9 @@ class module_Nm:
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-module_Nm Nm;
-
-interface_Nm_EcuM *EcuM_Client_ptr_Nm = &Nm;
-interface_Nm_SchM *SchM_Client_ptr_Nm = &Nm;
+module_Nm      Nm;
+infEcuMClient* gptrinfEcuMClient_Nm = &Nm;
+infSchMClient* gptrinfSchMClient_Nm = &Nm;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
