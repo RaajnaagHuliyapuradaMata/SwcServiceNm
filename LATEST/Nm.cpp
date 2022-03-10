@@ -7,8 +7,8 @@
 /* #INCLUDES                                         */
 /*****************************************************/
 #include "module.h"
-#include "Nm_EcuM.h"
-#include "Nm_SchM.h"
+#include "infNm_EcuM.h"
+#include "infNm_SchM.h"
 #include "Nm_Unused.h"
 
 /*****************************************************/
@@ -28,6 +28,7 @@ class module_Nm:
    public:
       FUNC(void, NM_CODE) InitFunction   (void);
       FUNC(void, NM_CODE) DeInitFunction (void);
+      FUNC(void, NM_CODE) GetVersionInfo (void);
       FUNC(void, NM_CODE) MainFunction   (void);
 };
 
@@ -44,6 +45,7 @@ class module_Nm:
 /*****************************************************/
 module_Nm      Nm;
 infEcuMClient* gptrinfEcuMClient_Nm = &Nm;
+infDcmClient*  gptrinfDcmClient_Nm  = &Nm;
 infSchMClient* gptrinfSchMClient_Nm = &Nm;
 
 /*****************************************************/
@@ -53,6 +55,9 @@ FUNC(void, NM_CODE) module_Nm::InitFunction(void){
 }
 
 FUNC(void, NM_CODE) module_Nm::DeInitFunction(void){
+}
+
+FUNC(void, NM_CODE) module_Nm::GetVersionInfo(void){
 }
 
 FUNC(void, NM_CODE) module_Nm::MainFunction(void){
