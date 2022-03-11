@@ -8,8 +8,8 @@
 /*****************************************************/
 #include "module.h"
 #include "infNm_EcuM.h"
+#include "infNm_Dcm.h"
 #include "infNm_SchM.h"
-#include "Nm_Unused.h"
 
 /*****************************************************/
 /* #DEFINES                                          */
@@ -63,6 +63,8 @@ FUNC(void, NM_CODE) module_Nm::GetVersionInfo(void){
 FUNC(void, NM_CODE) module_Nm::MainFunction(void){
 }
 
+#include "Nm_Unused.h"
+
 FUNC(void, NM_CODE) class_Nm_Unused::PassiveStartUp(void){
 }
 
@@ -100,9 +102,6 @@ FUNC(void, NM_CODE) class_Nm_Unused::CheckRemoteSleepIndication(void){
 }
 
 FUNC(void, NM_CODE) class_Nm_Unused::GetState(void){
-}
-
-FUNC(void, NM_CODE) class_Nm_Unused::GetVersionInfo(void){
 }
 
 FUNC(void, NM_CODE) class_Nm_Unused::CbNetworkStartIndication(void){
