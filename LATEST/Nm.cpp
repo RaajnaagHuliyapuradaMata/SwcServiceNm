@@ -7,7 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "module.h"
-#include "infNm_Version.h"
+#include "Nm_Cfg.h"
 #include "infNm_EcuM.h"
 #include "infNm_Dcm.h"
 #include "infNm_SchM.h"
@@ -15,10 +15,19 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
+#define NM_AR_RELEASE_MAJOR_VERSION                                            4
+#define NM_AR_RELEASE_MINOR_VERSION                                            3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
+#if(NM_AR_RELEASE_MAJOR_VERSION != STD_AR_RELEASE_MAJOR_VERSION)
+   #error "Incompatible NM_AR_RELEASE_MAJOR_VERSION!"
+#endif
+
+#if(NM_AR_RELEASE_MINOR_VERSION != STD_AR_RELEASE_MINOR_VERSION)
+   #error "Incompatible NM_AR_RELEASE_MINOR_VERSION!"
+#endif
 
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
@@ -61,6 +70,11 @@ FUNC(void, NM_CODE) module_Nm::DeInitFunction(void){
 }
 
 FUNC(void, NM_CODE) module_Nm::GetVersionInfo(void){
+#if(STD_ON == Nm_DevErrorDetect)
+//TBD: API parameter check
+   Det_ReportError(
+   );
+#endif
 }
 
 FUNC(void, NM_CODE) module_Nm::MainFunction(void){
