@@ -6,11 +6,11 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "module.h"
-#include "CfgNm.h"
-#include "infNm_EcuM.h"
-#include "infNm_Dcm.h"
-#include "infNm_SchM.h"
+#include "module.hpp"
+#include "CfgNm.hpp"
+#include "infNm_EcuM.hpp"
+#include "infNm_Dcm.hpp"
+#include "infNm_SchM.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -90,7 +90,7 @@ FUNC(void, NM_CODE) module_Nm::GetVersionInfo(void){
 FUNC(void, NM_CODE) module_Nm::MainFunction(void){
 }
 
-#include "Nm_Unused.h"
+#include "Nm_Unused.hpp"
 
 FUNC(void, NM_CODE) class_Nm_Unused::PassiveStartUp(void){
 }
