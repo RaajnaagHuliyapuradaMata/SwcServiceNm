@@ -7,7 +7,6 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "module.hpp"
-#include "CfgNm.hpp"
 #include "infNm_EcuM.hpp"
 #include "infNm_Dcm.hpp"
 #include "infNm_SchM.hpp"
@@ -36,37 +35,40 @@ class module_Nm:
       public abstract_module
 {
    public:
+      module_Nm(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
+      }
       FUNC(void, NM_CODE) InitFunction   (void);
       FUNC(void, NM_CODE) DeInitFunction (void);
-      FUNC(void, NM_CODE) GetVersionInfo (void);
       FUNC(void, NM_CODE) MainFunction   (void);
-
-   private:
-      CONST(Std_TypeVersionInfo, NM_CONST) VersionInfo = {
-            0x0000
-         ,  0xFFFF
-         ,  0x01
-         ,  '0'
-         ,  '1'
-         ,  '0'
-      };
 };
+
+extern VAR(module_Nm, NM_VAR) Nm;
 
 /******************************************************************************/
 /* CONSTS                                                                     */
 /******************************************************************************/
+CONSTP2VAR(infEcuMClient, NM_VAR, NM_CONST) gptrinfEcuMClient_Nm = &Nm;
+CONSTP2VAR(infDcmClient,  NM_VAR, NM_CONST) gptrinfDcmClient_Nm  = &Nm;
+CONSTP2VAR(infSchMClient, NM_VAR, NM_CONST) gptrinfSchMClient_Nm = &Nm;
 
 /******************************************************************************/
 /* PARAMS                                                                     */
 /******************************************************************************/
+#include "CfgNm.hpp"
 
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-VAR(module_Nm, NM_VAR) Nm;
-CONSTP2VAR(infEcuMClient, NM_VAR, NM_CONST) gptrinfEcuMClient_Nm = &Nm;
-CONSTP2VAR(infDcmClient,  NM_VAR, NM_CONST) gptrinfDcmClient_Nm  = &Nm;
-CONSTP2VAR(infSchMClient, NM_VAR, NM_CONST) gptrinfSchMClient_Nm = &Nm;
+VAR(module_Nm, NM_VAR) Nm(
+   {
+         0x0000
+      ,  0xFFFF
+      ,  0x01
+      ,  '0'
+      ,  '1'
+      ,  '0'
+   }
+);
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
@@ -77,14 +79,6 @@ FUNC(void, NM_CODE) module_Nm::InitFunction(void){
 
 FUNC(void, NM_CODE) module_Nm::DeInitFunction(void){
    Nm.IsInitDone = E_NOT_OK;
-}
-
-FUNC(void, NM_CODE) module_Nm::GetVersionInfo(void){
-#if(STD_ON == Nm_DevErrorDetect)
-//TBD: API parameter check
-   Det_ReportError(
-   );
-#endif
 }
 
 FUNC(void, NM_CODE) module_Nm::MainFunction(void){
