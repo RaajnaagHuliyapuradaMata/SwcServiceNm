@@ -6,7 +6,7 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "module.hpp"
+#include "Module.hpp"
 #include "infNm_EcuM.hpp"
 #include "infNm_Dcm.hpp"
 #include "infNm_SchM.hpp"
@@ -37,6 +37,9 @@ class module_Nm:
    public:
       module_Nm(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
       }
+      FUNC(void, _CODE) InitFunction(
+         CONSTP2CONST(CfgModule_TypeAbstract, _CONFIG_DATA, _APPL_CONST) lptrCfgModule
+      );
       FUNC(void, NM_CODE) InitFunction   (void);
       FUNC(void, NM_CODE) DeInitFunction (void);
       FUNC(void, NM_CODE) MainFunction   (void);
@@ -73,7 +76,19 @@ VAR(module_Nm, NM_VAR) Nm(
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-FUNC(void, NM_CODE) module_Nm::InitFunction(void){
+FUNC(void, NM_CODE) module_Nm::InitFunction(
+   CONSTP2CONST(CfgNm_Type, CFGNM_CONFIG_DATA, CFGNM_APPL_CONST) lptrCfgNm
+){
+   if(NULL_PTR == lptrCfgNm){
+#if(STD_ON == Nm_DevErrorDetect)
+      Det_ReportError(
+      );
+#endif
+   }
+   else{
+// check lptrCfgNm for memory faults
+// use PBcfg_Nm as back-up configuration
+   }
    Nm.IsInitDone = E_OK;
 }
 
