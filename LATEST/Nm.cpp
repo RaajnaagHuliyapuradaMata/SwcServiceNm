@@ -37,10 +37,9 @@ class module_Nm:
    public:
       module_Nm(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
       }
-      FUNC(void, _CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, _CONFIG_DATA, _APPL_CONST) lptrCfgModule
+      FUNC(void, NM_CODE) InitFunction(
+         CONSTP2CONST(CfgModule_TypeAbstract, NM_CONFIG_DATA, NM_APPL_CONST) lptrCfgModule
       );
-      FUNC(void, NM_CODE) InitFunction   (void);
       FUNC(void, NM_CODE) DeInitFunction (void);
       FUNC(void, NM_CODE) MainFunction   (void);
 };
@@ -77,23 +76,39 @@ VAR(module_Nm, NM_VAR) Nm(
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
 FUNC(void, NM_CODE) module_Nm::InitFunction(
-   CONSTP2CONST(CfgNm_Type, CFGNM_CONFIG_DATA, CFGNM_APPL_CONST) lptrCfgNm
+   CONSTP2CONST(CfgModule_TypeAbstract, NM_CONFIG_DATA, NM_APPL_CONST) lptrCfgModule
 ){
-   if(NULL_PTR == lptrCfgNm){
+   if(E_OK == IsInitDone){
 #if(STD_ON == Nm_DevErrorDetect)
       Det_ReportError(
       );
 #endif
    }
    else{
-// check lptrCfgNm for memory faults
+      if(NULL_PTR == lptrCfgModule){
+#if(STD_ON == Nm_DevErrorDetect)
+         Det_ReportError(
+         );
+#endif
+      }
+      else{
+// check lptrCfgModule for memory faults
 // use PBcfg_Nm as back-up configuration
+      }
+      IsInitDone = E_OK;
    }
-   Nm.IsInitDone = E_OK;
 }
 
 FUNC(void, NM_CODE) module_Nm::DeInitFunction(void){
-   Nm.IsInitDone = E_NOT_OK;
+   if(E_OK != IsInitDone){
+#if(STD_ON == Nm_DevErrorDetect)
+      Det_ReportError(
+      );
+#endif
+   }
+   else{
+      IsInitDone = E_NOT_OK;
+   }
 }
 
 FUNC(void, NM_CODE) module_Nm::MainFunction(void){
