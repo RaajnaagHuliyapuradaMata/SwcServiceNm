@@ -78,6 +78,7 @@ VAR(module_Nm, NM_VAR) Nm(
 FUNC(void, NM_CODE) module_Nm::InitFunction(
    CONSTP2CONST(CfgModule_TypeAbstract, NM_CONFIG_DATA, NM_APPL_CONST) lptrCfgModule
 ){
+#if(STD_ON == Nm_InitCheck)
    if(E_OK == IsInitDone){
 #if(STD_ON == Nm_DevErrorDetect)
       Det_ReportError(
@@ -85,6 +86,7 @@ FUNC(void, NM_CODE) module_Nm::InitFunction(
 #endif
    }
    else{
+#endif
       if(NULL_PTR == lptrCfgModule){
 #if(STD_ON == Nm_DevErrorDetect)
          Det_ReportError(
@@ -96,10 +98,13 @@ FUNC(void, NM_CODE) module_Nm::InitFunction(
 // use PBcfg_Nm as back-up configuration
       }
       IsInitDone = E_OK;
+#if(STD_ON == Nm_InitCheck)
    }
+#endif
 }
 
 FUNC(void, NM_CODE) module_Nm::DeInitFunction(void){
+#if(STD_ON == Nm_InitCheck)
    if(E_OK != IsInitDone){
 #if(STD_ON == Nm_DevErrorDetect)
       Det_ReportError(
@@ -107,11 +112,26 @@ FUNC(void, NM_CODE) module_Nm::DeInitFunction(void){
 #endif
    }
    else{
+#endif
       IsInitDone = E_NOT_OK;
+#if(STD_ON == Nm_InitCheck)
    }
+#endif
 }
 
 FUNC(void, NM_CODE) module_Nm::MainFunction(void){
+#if(STD_ON == Nm_InitCheck)
+   if(E_OK != IsInitDone){
+#if(STD_ON == Nm_DevErrorDetect)
+      Det_ReportError(
+      );
+#endif
+   }
+   else{
+#endif
+#if(STD_ON == Nm_InitCheck)
+   }
+#endif
 }
 
 class class_Nm_Unused{
