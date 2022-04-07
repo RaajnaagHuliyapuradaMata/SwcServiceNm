@@ -101,8 +101,8 @@ FUNC(void, NM_CODE) module_Nm::InitFunction(
             lptrCfg = lptrCfgModule;
          }
          else{
-// use PBcfg_CanIf as back-up configuration
-            lptrCfg = PBcfg_CanIf;
+// use PBcfgCanIf as back-up configuration
+            lptrCfg = &PBcfgNm;
          }
       }
       IsInitDone = E_OK;
