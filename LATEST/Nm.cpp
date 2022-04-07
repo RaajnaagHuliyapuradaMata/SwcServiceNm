@@ -96,8 +96,14 @@ FUNC(void, NM_CODE) module_Nm::InitFunction(
 #endif
       }
       else{
+         if(STD_LOW){
 // check lptrCfgModule for memory faults
-// use PBcfg_Nm as back-up configuration
+            lptrCfg = lptrCfgModule;
+         }
+         else{
+// use PBcfg_CanIf as back-up configuration
+            lptrCfg = PBcfg_CanIf;
+         }
       }
       IsInitDone = E_OK;
 #if(STD_ON == Nm_InitCheck)
