@@ -7,10 +7,9 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
+#include "CfgNm.hpp"
 #include "Nm_core.hpp"
-#include "infNm_EcuM.hpp"
-#include "infNm_Dcm.hpp"
-#include "infNm_SchM.hpp"
+#include "infNm.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -44,6 +43,7 @@ class module_Nm:
       );
       FUNC(void, NM_CODE) DeInitFunction (void);
       FUNC(void, NM_CODE) MainFunction   (void);
+      NM_CORE_FUNCTIONALITIES
 };
 
 extern VAR(module_Nm, NM_VAR) Nm;
@@ -58,7 +58,6 @@ CONSTP2VAR(infSchMClient, NM_VAR, NM_CONST) gptrinfSchMClient_Nm = &Nm;
 /******************************************************************************/
 /* PARAMS                                                                     */
 /******************************************************************************/
-#include "CfgNm.hpp"
 
 /******************************************************************************/
 /* OBJECTS                                                                    */

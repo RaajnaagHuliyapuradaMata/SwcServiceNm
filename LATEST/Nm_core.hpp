@@ -12,7 +12,7 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define NM_COREFUNCTIONALITIES                                                 \
+#define NM_CORE_FUNCTIONALITIES                                                \
               FUNC(void, NM_CODE) PassiveStartUp                  (void);      \
               FUNC(void, NM_CODE) NetworkRequest                  (void);      \
               FUNC(void, NM_CODE) NetworkRelease                  (void);      \
@@ -42,7 +42,7 @@
               FUNC(void, NM_CODE) CbCarWakeUpIndication           (void);      \
               FUNC(void, NM_CODE) CalloutCarWakeUp                (void);      \
 
-#define NM_COREFUNCTIONALITIES_VIRTUAL                                         \
+#define NM_CORE_FUNCTIONALITIES_VIRTUAL                                        \
       virtual FUNC(void, NM_CODE) PassiveStartUp                  (void) = 0;  \
       virtual FUNC(void, NM_CODE) NetworkRequest                  (void) = 0;  \
       virtual FUNC(void, NM_CODE) NetworkRelease                  (void) = 0;  \
@@ -81,7 +81,7 @@
 /******************************************************************************/
 class class_Nm_Functionality{
    public:
-      NM_COREFUNCTIONALITIES_VIRTUAL
+      NM_CORE_FUNCTIONALITIES_VIRTUAL
 };
 
 /******************************************************************************/
