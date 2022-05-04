@@ -113,7 +113,7 @@ FUNC(void, NM_CODE) module_Nm::InitFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  0 //TBD: IdError
+         ,  NM_E_UNINIT
       );
 #endif
    }
@@ -133,7 +133,7 @@ FUNC(void, NM_CODE) module_Nm::DeInitFunction(void){
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  0 //TBD: IdError
+         ,  NM_E_UNINIT
       );
 #endif
    }
@@ -152,7 +152,7 @@ FUNC(void, NM_CODE) module_Nm::MainFunction(void){
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  0 //TBD: IdError
+         ,  NM_E_UNINIT
       );
 #endif
    }
