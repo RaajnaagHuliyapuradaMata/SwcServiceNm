@@ -89,7 +89,10 @@ FUNC(void, NM_CODE) module_Nm::InitFunction(
    CONSTP2CONST(CfgModule_TypeAbstract, NM_CONFIG_DATA, NM_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == Nm_InitCheck)
-   if(E_OK != IsInitDone){
+   if(
+         E_OK
+      != IsInitDone
+   ){
 #endif
       if(NULL_PTR != lptrCfgModule){
          if(STD_HIGH){
@@ -127,7 +130,10 @@ FUNC(void, NM_CODE) module_Nm::InitFunction(
 
 FUNC(void, NM_CODE) module_Nm::DeInitFunction(void){
 #if(STD_ON == Nm_InitCheck)
-   if(E_OK == IsInitDone){
+   if(
+         E_OK
+      == IsInitDone
+   ){
 #endif
 #if(STD_ON == Nm_InitCheck)
       IsInitDone = E_NOT_OK;
@@ -147,7 +153,10 @@ FUNC(void, NM_CODE) module_Nm::DeInitFunction(void){
 
 FUNC(void, NM_CODE) module_Nm::MainFunction(void){
 #if(STD_ON == Nm_InitCheck)
-   if(E_OK == IsInitDone){
+   if(
+         E_OK
+      == IsInitDone
+   ){
 #endif
 #if(STD_ON == Nm_InitCheck)
    }
