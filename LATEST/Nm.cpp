@@ -9,7 +9,7 @@
 #include "Module.hpp"
 #include "CfgNm.hpp"
 #include "Nm_core.hpp"
-#include "infNm.hpp"
+#include "infNm_Exp.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -32,6 +32,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_Nm:
+   INTERFACES_EXPORTED_NM
       public abstract_module
    ,  public class_Nm_Functionality
 {
