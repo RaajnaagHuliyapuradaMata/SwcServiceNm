@@ -32,7 +32,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_Nm:
-   INTERFACES_EXPORTED_NM
+      INTERFACES_EXPORTED_NM
       public abstract_module
    ,  public class_Nm_Functionality
 {
