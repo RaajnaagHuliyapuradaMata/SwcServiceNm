@@ -10,6 +10,7 @@
 #include "CfgNm.hpp"
 #include "Nm_core.hpp"
 #include "infNm_Exp.hpp"
+#include "infNm_Imp.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
