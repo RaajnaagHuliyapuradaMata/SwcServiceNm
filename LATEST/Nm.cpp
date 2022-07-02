@@ -82,12 +82,7 @@ FUNC(void, NM_CODE) module_Nm::InitFunction(
    ){
 #endif
       if(NULL_PTR != lptrCfgModule){
-         if(STD_HIGH){
-            lptrCfg = lptrCfgModule;
-         }
-         else{
-            lptrCfg = &PBcfgNm;
-         }
+         lptrCfg = lptrCfgModule;
       }
       else{
 #if(STD_ON == Nm_DevErrorDetect)
