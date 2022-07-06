@@ -7,9 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
-#include "CfgNm.hpp"
-#include "Nm_core.hpp"
-#include "infNm_Exp.hpp"
+#include "Nm.hpp"
 #include "infNm_Imp.hpp"
 
 /******************************************************************************/
@@ -32,26 +30,6 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-class module_Nm:
-      INTERFACES_EXPORTED_NM
-      public abstract_module
-   ,  public class_Nm_Functionality
-{
-   private:
-/******************************************************************************/
-/* OBJECTS                                                                    */
-/******************************************************************************/
-
-   public:
-      FUNC(void, NM_CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, NM_CONFIG_DATA, NM_APPL_CONST) lptrCfgModule
-      );
-      FUNC(void, NM_CODE) DeInitFunction (void);
-      FUNC(void, NM_CODE) MainFunction   (void);
-      NM_CORE_FUNCTIONALITIES
-};
-
-extern VAR(module_Nm, NM_VAR) Nm;
 
 /******************************************************************************/
 /* CONSTS                                                                     */
