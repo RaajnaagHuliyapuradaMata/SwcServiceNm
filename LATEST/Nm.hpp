@@ -7,6 +7,7 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
+#include "ConstNm.hpp"
 #include "CfgNm.hpp"
 #include "Nm_core.hpp"
 #include "infNm_Exp.hpp"
@@ -31,13 +32,15 @@ class module_Nm:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
+      const ConstNm_Type* lptrConst = (ConstNm_Type*)NULL_PTR;
 
    public:
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
       FUNC(void, NM_CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, NM_CONFIG_DATA, NM_APPL_CONST) lptrCfgModule
+            CONSTP2CONST(ConstModule_TypeAbstract, NM_CONST,       NM_APPL_CONST) lptrConstModule
+         ,  CONSTP2CONST(CfgModule_TypeAbstract,   NM_CONFIG_DATA, NM_APPL_CONST) lptrCfgModule
       );
       FUNC(void, NM_CODE) DeInitFunction (void);
       FUNC(void, NM_CODE) MainFunction   (void);

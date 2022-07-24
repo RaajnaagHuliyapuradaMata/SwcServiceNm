@@ -48,7 +48,8 @@ VAR(module_Nm, NM_VAR) Nm;
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
 FUNC(void, NM_CODE) module_Nm::InitFunction(
-   CONSTP2CONST(CfgModule_TypeAbstract, NM_CONFIG_DATA, NM_APPL_CONST) lptrCfgModule
+      CONSTP2CONST(ConstModule_TypeAbstract, NM_CONST,       NM_APPL_CONST) lptrConstModule
+   ,  CONSTP2CONST(CfgModule_TypeAbstract,   NM_CONFIG_DATA, NM_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == Nm_InitCheck)
    if(
@@ -56,8 +57,12 @@ FUNC(void, NM_CODE) module_Nm::InitFunction(
       != IsInitDone
    ){
 #endif
-      if(NULL_PTR != lptrCfgModule){
-         lptrCfg = lptrCfgModule;
+      if(
+            (NULL_PTR != lptrConstModule)
+         && (NULL_PTR != lptrCfgModule)
+      ){
+         lptrConst = lptrConstModule;
+         lptrCfg   = lptrCfgModule;
       }
       else{
 #if(STD_ON == Nm_DevErrorDetect)
