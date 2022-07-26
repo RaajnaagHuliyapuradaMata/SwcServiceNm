@@ -61,7 +61,7 @@ FUNC(void, NM_CODE) module_Nm::InitFunction(
             (NULL_PTR != lptrConstModule)
          && (NULL_PTR != lptrCfgModule)
       ){
-         lptrConst = lptrConstModule;
+         lptrConst = (const ConstNm_Type*)lptrConstModule;
          lptrCfg   = lptrCfgModule;
       }
       else{
