@@ -1,5 +1,5 @@
 /******************************************************************************/
-/* File   : ServiceNm.cpp                                                            */
+/* File   : ServiceNm.cpp                                                     */
 /* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
 /******************************************************************************/
 
@@ -13,8 +13,8 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define SERVICENM_AR_RELEASE_VERSION_MAJOR                                            4
-#define SERVICENM_AR_RELEASE_VERSION_MINOR                                            3
+#define SERVICENM_AR_RELEASE_VERSION_MAJOR                                     4
+#define SERVICENM_AR_RELEASE_VERSION_MINOR                                     3
 
 /******************************************************************************/
 /* MACROS                                                                     */
